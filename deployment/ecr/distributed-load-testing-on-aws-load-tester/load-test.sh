@@ -32,6 +32,10 @@ if [ "$TEST_TYPE" != "simple" ]; then
       exit 1
     fi
 
+    # copy zipped jar dependencies to jmeter lib dir
+    echo "cp *.jar $JMETER_LIB_PATH"
+    cp *.jar $JMETER_LIB_PATH
+
     sed -i -e "s|$TEST_ID.jmx|$JMETER_SCRIPT|g" test.json
   fi
 fi
